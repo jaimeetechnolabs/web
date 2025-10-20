@@ -928,6 +928,142 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(14, 165, 168, 0.08), rgba(249, 115, 22, 0.05));
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-box {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--light-bg), rgba(255, 255, 255, 0.5));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(14, 165, 168, 0.12);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-box h4 {
+      color: var(--dark-bg);
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .feature-box p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .showcase-item {
+      background: linear-gradient(135deg, var(--light-bg), rgba(255, 255, 255, 0.5));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .showcase-item:hover {
+      border-color: var(--primary);
+      box-shadow: 0 12px 32px rgba(14, 165, 168, 0.15);
+      transform: translateY(-6px);
+    }
+
+    .showcase-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(14, 165, 168, 0.1), rgba(249, 115, 22, 0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .showcase-item h4 {
+      color: var(--dark-bg);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .showcase-item p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -996,8 +1132,12 @@
             <li>UI/UX design and user experience optimization</li>
           </ul>
         </div>
-        <div class="about-image">
-          <img src="assets/img/placeholder1.jpg" alt="Jaimee Technolabs Team">
+        <div class="about-image" style="background: linear-gradient(135deg, #0ea5a8 0%, #0d9499 50%, #067a7d 100%); display: flex; align-items: center; justify-content: center; border-radius: 12px; min-height: 300px;">
+          <div style="text-align: center; color: white;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800;">Building Digital Excellence</h3>
+            <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;">Flutter • React • QA • N8N • AI/ML<br/>From Concept to Reality</p>
+          </div>
         </div>
       </div>
     </section>
