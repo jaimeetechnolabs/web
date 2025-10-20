@@ -1,288 +1,178 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jaimee Technolabs — Mobile App Development</title>
-  <meta name="description" content="Jaimee Technolabs — Mobile & Web app development. From concept to reality — we deliver. Android, Flutter, iOS, Web, Backend." />
-  <link rel="manifest" href="manifest.json">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jaimee Technolabs — Mobile & Web Solutions</title>
+  <meta name="description" content="Jaimee Technolabs - Mobile & Web app development. From concept to reality — we deliver." />
   <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <nav>
+    <div class="container navbar">
       <div class="brand">
-        <img src="assets/logo-1.jpeg" alt="Jaimee Technolabs logo" />
-        <h1>Jaimee Technolabs</h1>
+        <a href="#home"><img src="assets/logo-1.png" alt="Jaimee Technolabs logo"></a>
+        <div class="company">Jaimee Technolabs</div>
       </div>
-
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" class="secondary">Contact</a>
-      </div>
-
-      <button class="hamburger" aria-label="Toggle menu" title="Menu">
-        ☰
-      </button>
-    </nav>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn-primary" href="#contact">Request Demo</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+      </nav>
+    </div>
   </header>
 
-  <main id="home" class="hero" role="main">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h2>We build mobile & web products that people love.</h2>
-          <p>Jaimee Technolabs is a full-cycle product studio specializing in Android, iOS, Flutter, and Web development. From idea validation to app store launch — we ship fast, clean, and maintainable apps.</p>
-
-          <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
-            <a class="btn" href="#projects">View Portfolio</a>
-            <a class="secondary" href="#contact">Request a Quote</a>
-          </div>
-
-          <div style="margin-top:1rem" class="hero-card">
-            <h4>Trusted expertise</h4>
-            <div class="meta">
-              <div>8+ years experience</div>
-              <div style="margin-left:8px;color:var(--muted)">•</div>
-              <div style="margin-left:8px">15+ apps launched</div>
-              <div style="margin-left:8px;color:var(--muted)">•</div>
-              <div style="margin-left:8px">100k+ downloads</div>
-            </div>
+  <main id="home">
+    <section class="hero container" id="home">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Transforming ideas into digital experiences</h1>
+          <p>From concept to reality — we design, build and scale mobile & web products. Flutter, Native Android, iOS & Cloud-ready backends.</p>
+          <div class="hero-cta">
+            <a class="btn-primary" href="#contact">Get a Demo</a>
+            <a href="#projects" style="align-self:center;color:var(--muted);font-weight:700">View Portfolio →</a>
           </div>
         </div>
-
-        <div>
-          <div class="hero-card">
-            <h4 style="margin-bottom:0.4rem">Contact</h4>
-            <div style="display:flex;flex-direction:column;gap:0.5rem">
-              <div class="meta"><strong>Email:</strong>&nbsp;<a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
-              <div class="meta"><strong>Phone:</strong>&nbsp;<a href="tel:+918866142253">+91 8866142253</a></div>
-              <div class="meta"><strong>Location:</strong>&nbsp;Ahmedabad, Gujarat, India</div>
-              <div style="margin-top:0.6rem"><span class="pill">Mobile App Development</span>&nbsp;&nbsp;<span class="pill" style="background:rgba(232,76,61,0.06);color:var(--coral)">Flutter & Native</span></div>
-            </div>
-          </div>
-
-          <div style="margin-top:1rem" class="about-card">
-            <h4 style="margin-bottom:0.5rem">Why Jaimee?</h4>
-            <p class="muted-note">We combine design thinking, engineering excellence and pragmatic product strategy to deliver apps that scale.</p>
-            <div style="display:flex;gap:0.5rem;margin-top:0.8rem;flex-wrap:wrap">
-              <div class="pill">Rapid MVPs</div>
-              <div class="pill">DevOps & CI/CD</div>
-              <div class="pill">QA & Testing</div>
-            </div>
-          </div>
+        <div class="hero-card">
+          <h3 style="margin-bottom:0.6rem;color:var(--teal)">Quick Contact</h3>
+          <div style="font-weight:700">Email: <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
+          <div style="margin-top:0.25rem;font-weight:700">Phone: <a href="tel:+918866142253">+91 8866142253</a></div>
+          <hr style="margin:0.8rem 0;border:none;border-top:1px solid rgba(15,23,36,0.04)" />
+          <div style="color:var(--muted);font-size:0.95rem">We typically respond within 1 business day. Tell us about your project and timeline.</div>
         </div>
       </div>
-    </div>
-  </main>
+    </section>
 
-  <section id="about">
-    <h3 class="section-title">About Jaimee Technolabs</h3>
-    <div class="container about-grid">
-      <div>
-        <div class="about-card">
-          <p>Jaimee Technolabs is a product-focused development studio. We help startups and enterprises design, build and scale mobile & web applications. Our team is experienced across industries — social networking, media & streaming, e-commerce, agri-tech and health & fitness.</p>
-          <p>We emphasize maintainability, testability and user experience, delivering production-ready apps with analytics, CI/CD, and cloud infrastructure.</p>
-
-          <div style="margin-top:1rem">
-            <div><strong>Our process:</strong> Discovery → UI/UX → Development → QA → Launch → Support</div>
-            <div style="margin-top:0.5rem"><strong>Tech stack:</strong> Flutter, Kotlin, Swift, Java, Firebase, Node.js, PostgreSQL, AWS/GCP</div>
-            <div style="margin-top:0.5rem"><strong>Engagements:</strong> Full build, team augmentation, MVP, consultancy</div>
-          </div>
+    <section id="about" class="section container">
+      <h2>About Us</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:1rem;margin-top:1rem;align-items:center">
+        <div style="color:var(--muted);line-height:1.7">
+          <p><strong>Jaimee Technolabs</strong> is a product-first mobile & web studio. We build performant mobile apps, scalable backends, and delightful user experiences. Our team combines craftsmanship with practical product strategy to launch apps used by thousands.</p>
+          <ul style="margin-top:0.6rem;color:var(--muted)">
+            <li>Expertise: Flutter, Kotlin, Swift, Node.js, Firebase, AWS</li>
+            <li>Industries: Social, Media, E-commerce, Agri-tech, Health</li>
+            <li>Services: MVPs, Full product development, Staff augmentation</li>
+          </ul>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(15,23,36,0.04)">
+          <img src="assets/img/placeholder1.jpg" alt="team" style="width:100%;height:100%;object-fit:cover">
         </div>
       </div>
+    </section>
 
-      <aside>
-        <div class="about-card">
-          <h4 style="margin-bottom:0.4rem">Quick facts</h4>
-          <div style="display:flex;flex-direction:column;gap:0.6rem">
-            <div><strong>Team:</strong> Senior engineers & designers</div>
-            <div><strong>Delivery:</strong> Agile sprints, fortnightly demos</div>
-            <div><strong>Availability:</strong> Remote / Onsite</div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section id="services">
-    <h3 class="section-title">Our Services</h3>
-    <div class="container">
-      <div class="services-grid">
-        <div class="service">
+    <section id="services" class="section container">
+      <h2>Services</h2>
+      <div class="services" style="margin-top:1rem">
+        <div class="card">
           <h4>Mobile App Development</h4>
-          <p>Flutter & native Android/iOS apps — clean architecture and scalable codebases.</p>
+          <p style="color:var(--muted)">Flutter & native Android/iOS — clean architecture & testable code.</p>
         </div>
-        <div class="service">
+        <div class="card">
           <h4>UI / UX Design</h4>
-          <p>User-centered design, prototypes, and polished visuals that convert.</p>
+          <p style="color:var(--muted)">User-centered design, prototypes and pixel-perfect screens.</p>
         </div>
-        <div class="service">
+        <div class="card">
           <h4>Backend & APIs</h4>
-          <p>Fast, secure REST / GraphQL APIs built with Node.js, Postgres, and scalable infra.</p>
+          <p style="color:var(--muted)">Secure, scalable APIs with Node.js, Postgres and cloud infra.</p>
         </div>
-        <div class="service">
+        <div class="card">
           <h4>Cloud & DevOps</h4>
-          <p>CI/CD, automated testing, monitoring, and cloud deployments (AWS / GCP).</p>
+          <p style="color:var(--muted)">CI/CD, monitoring, and automated deployments to AWS/GCP.</p>
         </div>
-        <div class="service">
+        <div class="card">
           <h4>Maintenance & Support</h4>
-          <p>Post-launch support, bug fixes, feature updates and performance tuning.</p>
+          <p style="color:var(--muted)">Post-launch support, performance tuning & feature roadmap.</p>
         </div>
-        <div class="service">
+        <div class="card">
           <h4>Product Strategy</h4>
-          <p>MVP planning, tech audits and roadmap consultations to maximize impact.</p>
+          <p style="color:var(--muted)">MVP planning, tech audits and go-to-market consultation.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <h3 class="section-title">Selected Projects</h3>
-    <div class="container">
-      <div class="trending" style="margin-bottom:1rem">
-        <div class="left">
-          <span class="badge">Trending</span>
-          <h3>Main Court — Play Pickleball</h3>
-          <p>Sports networking app for Pickleball players to find matches, skill-based matching, and real-time notifications. Built with Flutter + Firebase and optimized for global scale.</p>
-          <div class="cta-row" style="display:flex;gap:0.6rem;margin-top:0.5rem">
-            <a class="case-btn" href="https://apps.apple.com/us/app/main-court-play-pickleball/id6471336853" target="_blank">View on App Store</a>
-            <a class="case-btn" style="background:var(--coral)" href="#contact">Request Case Study</a>
+    <section id="projects" class="section container">
+      <h2>Selected Projects</h2>
+      <div style="margin-top:1rem" class="trending">
+        <div style="flex:1">
+          <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.6rem">
+            <div style="background:var(--coral);color:#fff;padding:0.25rem 0.5rem;border-radius:999px;font-weight:800;font-size:0.85rem">Trending</div>
+            <div style="font-weight:800">Main Court — Play Pickleball</div>
+          </div>
+          <p style="color:var(--muted)">Sports networking app built with Flutter & Firebase — matchmaking, booking and real-time notifications.</p>
+          <div style="margin-top:0.6rem;display:flex;gap:0.6rem">
+            <a class="btn-primary" href="https://apps.apple.com/us/app/main-court-play-pickleball/id6471336853" target="_blank">View App</a>
+            <a href="#contact" style="align-self:center;color:var(--muted);font-weight:700">Request Case Study</a>
           </div>
         </div>
-        <div class="preview">
-          <div style="padding:1rem;background:#fff;display:flex;flex-direction:column;gap:0.5rem">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <strong style="color:var(--teal)">Main Court</strong>
-              <span style="font-size:0.85rem;color:var(--muted)">Flutter • Firebase</span>
-            </div>
-            <div style="height:170px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.1rem">
-              Mobile App Preview
-            </div>
-          </div>
+        <div style="width:300px">
+          <div style="height:200px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">App Preview</div>
         </div>
       </div>
 
-      <div class="projects-grid">
-        <article class="project">
+      <div class="projects-grid" style="margin-top:1rem">
+        <div class="project">
           <div class="thumb">💬</div>
-          <h5>QuirkChat — Find Your People</h5>
-          <p class="muted-note">Social networking app for niche communities with real-time chat and community tools.</p>
-          <div class="tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">Firebase</span></div>
-          <div style="margin-top:auto;display:flex;gap:0.6rem">
-            <a href="https://play.google.com/store/apps/details?id=com.quirktastic" class="case-btn" style="background:transparent;color:var(--teal);border:1px solid rgba(43,166,192,0.12)">Play Store</a>
-          </div>
-        </article>
-
-        <article class="project">
+          <div style="padding:1rem"><strong>QuirkChat</strong><p style="color:var(--muted);margin-top:0.5rem">Community chat app with real-time messaging and groups.</p></div>
+        </div>
+        <div class="project">
           <div class="thumb">🎵</div>
-          <h5>Vibez - African Music Platform</h5>
-          <p class="muted-note">Music streaming platform connecting African artists to a global audience.</p>
-          <div class="tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Media</span></div>
-          <div style="margin-top:auto;display:flex;gap:0.6rem">
-            <a href="https://play.google.com/store/apps/details?id=com.ostech.vibez" class="case-btn" style="background:transparent;color:var(--teal);border:1px solid rgba(43,166,192,0.12)">Play Store</a>
-          </div>
-        </article>
-
-        <article class="project">
+          <div style="padding:1rem"><strong>Vibez</strong><p style="color:var(--muted);margin-top:0.5rem">Music streaming platform connecting artists & fans.</p></div>
+        </div>
+        <div class="project">
           <div class="thumb">🌾</div>
-          <h5>Ke Insumos</h5>
-          <p class="muted-note">Agricultural marketplace connecting producers with agronomists and order management workflows.</p>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">E-commerce</span></div>
-          <div style="margin-top:auto;display:flex;gap:0.6rem">
-            <a href="https://play.google.com/store/apps/details?id=com.keinsumos&hl=en" class="case-btn" style="background:transparent;color:var(--teal);border:1px solid rgba(43,166,192,0.12)">Play Store</a>
-          </div>
-        </article>
-
-        <article class="project">
+          <div style="padding:1rem"><strong>Ke Insumos</strong><p style="color:var(--muted);margin-top:0.5rem">Agricultural marketplace for producers & agronomists.</p></div>
+        </div>
+        <div class="project">
           <div class="thumb">🏥</div>
-          <h5>Dietas Saludables</h5>
-          <p class="muted-note">Health & fitness app featuring BMI, diet plans and nutrition tools.</p>
-          <div class="tags"><span class="tag">Android</span><span class="tag">SQLite</span><span class="tag">APIs</span></div>
-          <div style="margin-top:auto;display:flex;gap:0.6rem">
-            <a href="https://play.google.com/store/apps/details?id=com.lomasdefrida.dietassaludablesV2" class="case-btn" style="background:transparent;color:var(--teal);border:1px solid rgba(43,166,192,0.12)">Play Store</a>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="thumb">🔨</div>
-          <h5>FM Contractor</h5>
-          <p class="muted-note">Business management app for contractors and brokers with data & workflow tools.</p>
-          <div class="tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Business</span></div>
-          <div style="margin-top:auto;display:flex;gap:0.6rem">
-            <a href="https://play.google.com/store/apps/details?id=com.contractorfm" class="case-btn" style="background:transparent;color:var(--teal);border:1px solid rgba(43,166,192,0.12)">Play Store</a>
-          </div>
-        </article>
+          <div style="padding:1rem"><strong>Dietas Saludables</strong><p style="color:var(--muted);margin-top:0.5rem">Health & nutrition app with diet plans & calculators.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h3 class="section-title">Get in touch / Request a Quote</h3>
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-card contact-info">
-          <h4 style="margin-bottom:0.5rem">Let's talk about your project</h4>
-          <p class="muted-note">Fill the form and we'll get back within 1 business day. Or email us directly at <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a>.</p>
-
-          <form id="quoteForm" class="contact-card" onsubmit="submitForm(event)">
-            <label for="name">Full name</label>
-            <input id="name" name="name" required placeholder="Your full name" />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@company.com" />
-
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" placeholder="+91 9XXXXXXXXX" />
-
-            <label for="message">Tell us about the project</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Short description, platforms, timeline..."></textarea>
-
+    <section id="contact" class="section container">
+      <h2>Request a Demo</h2>
+      <div class="contact-grid" style="margin-top:1rem">
+        <div>
+          <form class="form" onsubmit="submitForm(event)">
+            <input id="name" placeholder="Full name" required>
+            <input id="email" type="email" placeholder="Email" required>
+            <input id="company" placeholder="Company (optional)">
+            <textarea id="message" rows="5" placeholder="Brief project description" required></textarea>
             <div style="display:flex;gap:0.6rem;align-items:center">
-              <button type="submit" class="btn">Send Request</button>
-              <div class="muted-note">Or call: <a href="tel:+918866142253">+91 8866142253</a></div>
+              <button type="submit">Request Demo</button>
+              <div style="color:var(--muted)">Or email: <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
             </div>
-            <div id="formMessage" style="margin-top:0.6rem;color:var(--muted)"></div>
+            <div id="formNote" style="color:var(--muted);margin-top:0.6rem"></div>
           </form>
         </div>
-
-        <aside>
-          <div class="contact-card">
-            <h4 style="margin-bottom:0.4rem">Company</h4>
-            <div style="display:flex;flex-direction:column;gap:0.5rem">
-              <div><strong>Jaimee Technolabs</strong></div>
-              <div><a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
-              <div><a href="tel:+918866142253">+91 8866142253</a></div>
-              <div>Ahmedabad, Gujarat, India</div>
-            </div>
-            <hr style="margin:0.9rem 0;border:none;border-top:1px solid rgba(15,23,36,0.04)" />
-            <p class="muted-note">We also provide white-label development, staffing augmentation, and technical audits for enterprises.</p>
-          </div>
+        <aside style="border-radius:12px;padding:1rem;border:1px solid rgba(15,23,36,0.04)">
+          <h4 style="color:var(--teal)">Office</h4>
+          <div style="font-weight:700">Ahmedabad, Gujarat, India</div>
+          <div style="margin-top:0.4rem;color:var(--muted)">Available for remote and onsite engagements.</div>
+          <hr style="margin:0.8rem 0;border:none;border-top:1px solid rgba(15,23,36,0.04)" />
+          <img src="assets/img/placeholder2.jpg" alt="office" style="width:100%;border-radius:8px;object-fit:cover">
         </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <div class="footer-inner">
-      <div>&copy; <span id="year"></span> Jaimee Technolabs. All rights reserved.</div>
-      <div style="display:flex;gap:0.75rem;align-items:center">
-        <div class="muted-note">Follow</div>
-        <div class="socials">
-          <a aria-label="LinkedIn" href="#" title="LinkedIn">LinkedIn</a>
-          <a aria-label="Twitter" href="#" title="Twitter">Twitter</a>
-        </div>
+    <div class="container footer-inner" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:0.8rem">
+        <img src="assets/logo-1.png" style="height:42px;border-radius:6px" alt="logo">
+        <div style="font-weight:700">Jaimee Technolabs</div>
       </div>
+      <div style="color:#d7f7fb">© 2025 Jaimee Technolabs. All rights reserved.</div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
