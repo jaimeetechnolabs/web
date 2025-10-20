@@ -2,27 +2,564 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jaimee Technolabs — Mobile & Web Solutions</title>
-  <meta name="description" content="Jaimee Technolabs - Mobile & Web app development. From concept to reality — we deliver." />
+  <title>Jaimee Technolabs – Mobile & Web App Development | Android, iOS, QA & AI/ML</title>
+  <meta name="description" content="Jaimee Technolabs - Professional mobile app development for Android, iOS, Web. QA, N8N automation & AI/ML solutions. From concept to reality - we deliver." />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --primary: #0ea5a8;
+      --primary-dark: #0d9499;
+      --accent: #f97316;
+      --accent-light: #fed7aa;
+      --muted: #64748b;
+      --light-bg: #f8fafc;
+      --dark-bg: #0f1724;
+      --border: rgba(15, 23, 36, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: #fff;
+      color: var(--dark-bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--dark-bg);
+    }
+
+    .brand img {
+      height: 40px;
+      border-radius: 6px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 168, 0.25);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      padding: 0.65rem 1.4rem;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--dark-bg), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      color: var(--dark-bg);
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, var(--light-bg), #ffffff);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(14, 165, 168, 0.08);
+    }
+
+    .hero-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card div {
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero-card a:hover {
+      text-decoration: underline;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tech-badge {
+      background: rgba(14, 165, 168, 0.1);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(14, 165, 168, 0.2);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px rgba(14, 165, 168, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h4 {
+      margin-bottom: 0.8rem;
+      color: var(--dark-bg);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .trending {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, var(--light-bg), rgba(14, 165, 168, 0.05));
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .trending > div:first-child {
+      flex: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .trending h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--dark-bg);
+    }
+
+    .trending p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .trending-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .trending-visual {
+      width: 320px;
+      height: 220px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 4rem;
+      box-shadow: 0 8px 24px rgba(14, 165, 168, 0.25);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .project:hover {
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px rgba(14, 165, 168, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .thumb {
+      height: 140px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2.5rem;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form input,
+    .form textarea {
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .form input:focus,
+    .form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 168, 0.1);
+    }
+
+    .form button {
+      align-self: flex-start;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, var(--light-bg), #ffffff);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-box h4 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .footer-content img {
+      height: 40px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trending {
+        flex-direction: column;
+      }
+
+      .trending-visual {
+        width: 100%;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .section h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .about-text {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .about-text ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .about-text li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .about-text li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .about-image {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container navbar">
       <div class="brand">
         <a href="#home"><img src="assets/logo-1.png" alt="Jaimee Technolabs logo"></a>
-        <div class="company">Jaimee Technolabs</div>
+        <div>Jaimee Technolabs</div>
       </div>
       <nav>
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn-primary" href="#contact">Request Demo</a></li>
+          <li><a class="btn-primary" href="#contact">Get Started</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
       </nav>
@@ -30,149 +567,209 @@
   </header>
 
   <main id="home">
-    <section class="hero container" id="home">
+    <section class="hero container">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Transforming ideas into digital experiences</h1>
-          <p>From concept to reality — we design, build and scale mobile & web products. Flutter, Native Android, iOS & Cloud-ready backends.</p>
+          <h1>Build Tomorrow's Apps Today</h1>
+          <div class="tagline">💡 From Concept to Reality - We Deliver</div>
+          <p>Expert app development using Flutter for cross-platform mobile apps and React for modern web applications. Complete QA assurance, N8N automation workflows, and cutting-edge AI/ML solutions. We transform your ideas into powerful, scalable applications.</p>
+          <div class="tech-stack">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">QA Testing</span>
+            <span class="tech-badge">N8N Automation</span>
+            <span class="tech-badge">AI/ML</span>
+          </div>
           <div class="hero-cta">
-            <a class="btn-primary" href="#contact">Get a Demo</a>
-            <a href="#projects" style="align-self:center;color:var(--muted);font-weight:700">View Portfolio →</a>
+            <a class="btn-primary" href="#contact">Request Demo</a>
+            <a class="btn-secondary" href="#projects">View Portfolio</a>
           </div>
         </div>
         <div class="hero-card">
-          <h3 style="margin-bottom:0.6rem;color:var(--teal)">Quick Contact</h3>
-          <div style="font-weight:700">Email: <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
-          <div style="margin-top:0.25rem;font-weight:700">Phone: <a href="tel:+918866142253">+91 8866142253</a></div>
-          <hr style="margin:0.8rem 0;border:none;border-top:1px solid rgba(15,23,36,0.04)" />
-          <div style="color:var(--muted);font-size:0.95rem">We typically respond within 1 business day. Tell us about your project and timeline.</div>
+          <h3>Quick Start</h3>
+          <div><strong>Email:</strong> <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
+          <div><strong>Phone:</strong> <a href="tel:+918866142253">+91 8866142253</a></div>
+          <hr style="margin:1rem 0;border:none;border-top:1px solid var(--border)" />
+          <div style="color:var(--muted);font-size:0.9rem;line-height:1.7">We respond within 24 hours. Share your project details, timeline, and vision. Let's build something great together.</div>
         </div>
       </div>
     </section>
 
     <section id="about" class="section container">
-      <h2>About Us</h2>
-      <div style="display:grid;grid-template-columns:1fr 360px;gap:1rem;margin-top:1rem;align-items:center">
-        <div style="color:var(--muted);line-height:1.7">
-          <p><strong>Jaimee Technolabs</strong> is a product-first mobile & web studio. We build performant mobile apps, scalable backends, and delightful user experiences. Our team combines craftsmanship with practical product strategy to launch apps used by thousands.</p>
-          <ul style="margin-top:0.6rem;color:var(--muted)">
-            <li>Expertise: Flutter, Kotlin, Swift, Node.js, Firebase, AWS</li>
-            <li>Industries: Social, Media, E-commerce, Agri-tech, Health</li>
-            <li>Services: MVPs, Full product development, Staff augmentation</li>
+      <h2>About Jaimee Technolabs</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><strong>Jaimee Technolabs</strong> is a forward-thinking software development studio specializing in high-quality mobile and web applications. We partner with startups and enterprises to transform innovative ideas into market-ready products.</p>
+          <p>With expertise spanning multiple platforms and technologies, we deliver end-to-end solutions—from architectural design and development to rigorous QA testing and intelligent automation workflows.</p>
+          <h4 style="color:var(--dark-bg);margin-top:1.5rem;margin-bottom:0.8rem;font-size:1.1rem">Our Capabilities:</h4>
+          <ul>
+            <li>Flutter mobile app development (iOS & Android)</li>
+            <li>React web applications with modern architecture</li>
+            <li>Comprehensive QA testing and quality assurance</li>
+            <li>N8N workflow automation & integration</li>
+            <li>AI/ML model development and deployment</li>
+            <li>UI/UX design and user experience optimization</li>
           </ul>
         </div>
-        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(15,23,36,0.04)">
-          <img src="assets/img/placeholder1.jpg" alt="team" style="width:100%;height:100%;object-fit:cover">
+        <div class="about-image">
+          <img src="assets/img/placeholder1.jpg" alt="Jaimee Technolabs Team">
         </div>
       </div>
     </section>
 
     <section id="services" class="section container">
-      <h2>Services</h2>
-      <div class="services" style="margin-top:1rem">
+      <h2>Our Services</h2>
+      <div class="services" style="margin-top:2rem">
         <div class="card">
-          <h4>Mobile App Development</h4>
-          <p style="color:var(--muted)">Flutter & native Android/iOS — clean architecture & testable code.</p>
+          <div class="card-icon">📱</div>
+          <h4>Flutter Mobile Apps</h4>
+          <p>Cross-platform mobile applications built with Flutter. Beautiful, fast, and native-like apps for both iOS and Android from a single codebase.</p>
         </div>
         <div class="card">
-          <h4>UI / UX Design</h4>
-          <p style="color:var(--muted)">User-centered design, prototypes and pixel-perfect screens.</p>
+          <div class="card-icon">⚛️</div>
+          <h4>React Web Applications</h4>
+          <p>Modern, responsive web applications built with React. Fast, interactive, and scalable solutions with excellent performance and user experience.</p>
         </div>
         <div class="card">
-          <h4>Backend & APIs</h4>
-          <p style="color:var(--muted)">Secure, scalable APIs with Node.js, Postgres and cloud infra.</p>
+          <div class="card-icon">✅</div>
+          <h4>QA & Testing</h4>
+          <p>Comprehensive quality assurance, functional testing, performance optimization, and bug detection ensuring production-ready applications.</p>
         </div>
         <div class="card">
-          <h4>Cloud & DevOps</h4>
-          <p style="color:var(--muted)">CI/CD, monitoring, and automated deployments to AWS/GCP.</p>
+          <div class="card-icon">⚙️</div>
+          <h4>N8N Automation</h4>
+          <p>Intelligent workflow automation using N8N. Connect apps, streamline processes, and eliminate manual tasks with zero-code/low-code solutions.</p>
         </div>
         <div class="card">
-          <h4>Maintenance & Support</h4>
-          <p style="color:var(--muted)">Post-launch support, performance tuning & feature roadmap.</p>
+          <div class="card-icon">🤖</div>
+          <h4>AI & Machine Learning</h4>
+          <p>Custom ML models, predictive analytics, computer vision, and NLP solutions integrated into your applications for intelligent automation.</p>
         </div>
         <div class="card">
-          <h4>Product Strategy</h4>
-          <p style="color:var(--muted)">MVP planning, tech audits and go-to-market consultation.</p>
+          <div class="card-icon">🎨</div>
+          <h4>UI/UX Design</h4>
+          <p>User-centered design approach. Beautiful interfaces, intuitive navigation, and engaging experiences that delight users.</p>
         </div>
       </div>
     </section>
 
     <section id="projects" class="section container">
-      <h2>Selected Projects</h2>
-      <div style="margin-top:1rem" class="trending">
-        <div style="flex:1">
-          <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.6rem">
-            <div style="background:var(--coral);color:#fff;padding:0.25rem 0.5rem;border-radius:999px;font-weight:800;font-size:0.85rem">Trending</div>
-            <div style="font-weight:800">Main Court — Play Pickleball</div>
-          </div>
-          <p style="color:var(--muted)">Sports networking app built with Flutter & Firebase — matchmaking, booking and real-time notifications.</p>
-          <div style="margin-top:0.6rem;display:flex;gap:0.6rem">
-            <a class="btn-primary" href="https://apps.apple.com/us/app/main-court-play-pickleball/id6471336853" target="_blank">View App</a>
-            <a href="#contact" style="align-self:center;color:var(--muted);font-weight:700">Request Case Study</a>
+      <h2>Featured Work</h2>
+      <div style="margin-top:2rem" class="trending">
+        <div>
+          <div class="badge">🎯 LATEST PROJECT</div>
+          <h3>Transform Your Business with Custom Technology</h3>
+          <p>We specialize in delivering comprehensive mobile and web solutions. Whether you need a feature-rich native app, intelligent automation workflows, or AI-powered features, our team brings expertise and innovation to every project.</p>
+          <p style="margin-top:1rem;font-weight:600;color:var(--primary)">Let's discuss your next big idea and turn it into reality.</p>
+          <div class="trending-cta">
+            <a class="btn-primary" href="#contact">Schedule Consultation</a>
+            <a href="#services" style="color:var(--muted);font-weight:700;text-decoration:none">Learn More →</a>
           </div>
         </div>
-        <div style="width:300px">
-          <div style="height:200px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800">App Preview</div>
+        <div class="trending-visual">
+          🚀
         </div>
       </div>
 
-      <div class="projects-grid" style="margin-top:1rem">
+      <h2 style="margin-top:4rem;margin-bottom:2rem">Client Projects</h2>
+      <div class="projects-grid">
         <div class="project">
           <div class="thumb">💬</div>
-          <div style="padding:1rem"><strong>QuirkChat</strong><p style="color:var(--muted);margin-top:0.5rem">Community chat app with real-time messaging and groups.</p></div>
+          <div style="padding:1.5rem">
+            <strong>Social Networking</strong>
+            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Community-driven apps with real-time messaging, user engagement, and social features.</p>
+          </div>
         </div>
         <div class="project">
           <div class="thumb">🎵</div>
-          <div style="padding:1rem"><strong>Vibez</strong><p style="color:var(--muted);margin-top:0.5rem">Music streaming platform connecting artists & fans.</p></div>
+          <div style="padding:1.5rem">
+            <strong>Media & Entertainment</strong>
+            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Streaming platforms, content delivery, and interactive media experiences.</p>
+          </div>
         </div>
         <div class="project">
-          <div class="thumb">🌾</div>
-          <div style="padding:1rem"><strong>Ke Insumos</strong><p style="color:var(--muted);margin-top:0.5rem">Agricultural marketplace for producers & agronomists.</p></div>
+          <div class="thumb">🛒</div>
+          <div style="padding:1.5rem">
+            <strong>E-Commerce Solutions</strong>
+            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Complete marketplace platforms with payments, inventory, and user management.</p>
+          </div>
         </div>
         <div class="project">
           <div class="thumb">🏥</div>
-          <div style="padding:1rem"><strong>Dietas Saludables</strong><p style="color:var(--muted);margin-top:0.5rem">Health & nutrition app with diet plans & calculators.</p></div>
+          <div style="padding:1.5rem">
+            <strong>Healthcare & Wellness</strong>
+            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">HIPAA-compliant health apps with telemedicine, appointments, and patient data management.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section container">
-      <h2>Request a Demo</h2>
-      <div class="contact-grid" style="margin-top:1rem">
+      <h2>Start Your Project</h2>
+      <div class="contact-grid" style="margin-top:2rem">
         <div>
           <form class="form" onsubmit="submitForm(event)">
-            <input id="name" placeholder="Full name" required>
-            <input id="email" type="email" placeholder="Email" required>
-            <input id="company" placeholder="Company (optional)">
-            <textarea id="message" rows="5" placeholder="Brief project description" required></textarea>
-            <div style="display:flex;gap:0.6rem;align-items:center">
-              <button type="submit">Request Demo</button>
-              <div style="color:var(--muted)">Or email: <a href="mailto:jaimeetechnolabs@gmail.com">jaimeetechnolabs@gmail.com</a></div>
-            </div>
-            <div id="formNote" style="color:var(--muted);margin-top:0.6rem"></div>
+            <input id="name" placeholder="Your Full Name" required>
+            <input id="email" type="email" placeholder="Email Address" required>
+            <input id="company" placeholder="Company Name (Optional)">
+            <select id="service" style="padding:0.9rem;border:1px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit" required>
+              <option value="">Select Service Type</option>
+              <option value="mobile">Mobile App Development</option>
+              <option value="web">Web Development</option>
+              <option value="qa">QA Testing</option>
+              <option value="automation">N8N Automation</option>
+              <option value="ai">AI/ML Solutions</option>
+              <option value="other">Other</option>
+            </select>
+            <textarea id="message" rows="5" placeholder="Describe your project idea, requirements, and timeline..." required></textarea>
+            <button type="submit" class="btn-primary">Request Demo</button>
+            <div id="formNote" style="color:var(--muted);margin-top:0.8rem;font-weight:600"></div>
           </form>
         </div>
-        <aside style="border-radius:12px;padding:1rem;border:1px solid rgba(15,23,36,0.04)">
-          <h4 style="color:var(--teal)">Office</h4>
-          <div style="font-weight:700">Ahmedabad, Gujarat, India</div>
-          <div style="margin-top:0.4rem;color:var(--muted)">Available for remote and onsite engagements.</div>
-          <hr style="margin:0.8rem 0;border:none;border-top:1px solid rgba(15,23,36,0.04)" />
-          <img src="assets/img/placeholder2.jpg" alt="office" style="width:100%;border-radius:8px;object-fit:cover">
-        </aside>
+        <div class="contact-box">
+          <h4>📍 Location</h4>
+          <div style="font-weight:700;margin-bottom:0.3rem">Ahmedabad, Gujarat</div>
+          <div style="color:var(--muted);font-size:0.9rem;margin-bottom:1.2rem">Available for remote and onsite engagements worldwide.</div>
+
+          <h4 style="margin-top:1.5rem">✉️ Email</h4>
+          <a href="mailto:jaimeetechnolabs@gmail.com" style="color:var(--primary);text-decoration:none;font-weight:600">jaimeetechnolabs@gmail.com</a>
+
+          <h4 style="margin-top:1.5rem">📞 Phone</h4>
+          <a href="tel:+918866142253" style="color:var(--primary);text-decoration:none;font-weight:600">+91 8866142253</a>
+
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+            <p style="color:var(--muted);font-size:0.9rem">Response time: Within 24 hours. We're excited to hear about your project!</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:0.8rem">
-        <img src="assets/logo-1.png" style="height:42px;border-radius:6px" alt="logo">
+    <div class="container footer-inner">
+      <div class="footer-content">
+        <img src="assets/logo-1.png" alt="Jaimee Technolabs">
         <div style="font-weight:700">Jaimee Technolabs</div>
       </div>
-      <div style="color:#d7f7fb">© 2025 Jaimee Technolabs. All rights reserved.</div>
+      <div>© 2025 Jaimee Technolabs. All rights reserved.</div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      const formNote = document.getElementById('formNote');
+      formNote.style.color = 'var(--primary)';
+      formNote.textContent = '✓ Thank you! We received your inquiry and will contact you within 24 hours.';
+      event.target.reset();
+      setTimeout(() => {
+        formNote.textContent = '';
+      }, 5000);
+    }
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
