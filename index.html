@@ -16,6 +16,13 @@
       --light-bg: #f8fafc;
       --dark-bg: #0f1724;
       --border: rgba(15, 23, 36, 0.08);
+      /* Spacing scale */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
     }
 
     * {
@@ -50,6 +57,23 @@
       margin: 0 auto;
       padding: 0 1.5rem;
     }
+
+    /* Base sections spacing */
+    .section { padding: var(--space-2xl) 0; }
+
+    /* Simple spacing utilities */
+    .mt-xs{margin-top:var(--space-xs)}
+    .mt-sm{margin-top:var(--space-sm)}
+    .mt-md{margin-top:var(--space-md)}
+    .mt-lg{margin-top:var(--space-lg)}
+    .mt-xl{margin-top:var(--space-xl)}
+    .mt-2xl{margin-top:var(--space-2xl)}
+    .mb-xs{margin-bottom:var(--space-xs)}
+    .mb-sm{margin-bottom:var(--space-sm)}
+    .mb-md{margin-bottom:var(--space-md)}
+    .mb-lg{margin-bottom:var(--space-lg)}
+    .mb-xl{margin-bottom:var(--space-xl)}
+    .mb-2xl{margin-bottom:var(--space-2xl)}
 
     header {
       padding: 1.2rem 0;
@@ -356,6 +380,10 @@
       background: #fff;
     }
 
+    .project-body { padding: var(--space-md); }
+
+    .project p { color: var(--muted); font-size: 0.95rem; margin-top: var(--space-xs); }
+
     .project:hover {
       border-color: var(--primary);
       box-shadow: 0 8px 24px rgba(14, 165, 168, 0.12);
@@ -404,6 +432,8 @@
     .form button {
       align-self: flex-start;
     }
+
+    #formNote { color: var(--muted); font-weight: 600; }
 
     .contact-box {
       background: linear-gradient(135deg, var(--light-bg), #ffffff);
@@ -1142,7 +1172,7 @@
 
     <section id="services" class="section container">
       <h2>Our Services</h2>
-      <div class="services" style="margin-top:2rem">
+      <div class="services mt-lg">
         <div class="card">
           <div class="card-icon">📱</div>
           <h4>Flutter Mobile Apps</h4>
@@ -1178,12 +1208,12 @@
 
     <section id="projects" class="section container">
       <h2>Featured Work</h2>
-      <div style="margin-top:2rem" class="trending">
+      <div class="trending mt-lg">
         <div>
           <div class="badge">🎯 LATEST PROJECT</div>
           <h3>Transform Your Business with Custom Technology</h3>
           <p>We specialize in delivering comprehensive mobile and web solutions. Whether you need a feature-rich native app, intelligent automation workflows, or AI-powered features, our team brings expertise and innovation to every project.</p>
-          <p style="margin-top:1rem;font-weight:600;color:var(--primary)">Let's discuss your next big idea and turn it into reality.</p>
+          <p class="mt-sm" style="font-weight:600;color:var(--primary)">Let's discuss your next big idea and turn it into reality.</p>
           <div class="trending-cta">
             <a class="btn-primary" href="#contact">Schedule Consultation</a>
             <a href="#services" style="color:var(--muted);font-weight:700;text-decoration:none">Learn More →</a>
@@ -1194,34 +1224,34 @@
         </div>
       </div>
 
-      <h2 style="margin-top:4rem;margin-bottom:2rem">Client Projects</h2>
+      <h2 class="mt-2xl mb-lg">Client Projects</h2>
       <div class="projects-grid">
         <div class="project">
           <div class="thumb">💬</div>
-          <div style="padding:1.5rem">
+          <div class="project-body">
             <strong>Social Networking</strong>
-            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Community-driven apps with real-time messaging, user engagement, and social features.</p>
+            <p>Community-driven apps with real-time messaging, user engagement, and social features.</p>
           </div>
         </div>
         <div class="project">
           <div class="thumb">🎵</div>
-          <div style="padding:1.5rem">
+          <div class="project-body">
             <strong>Media & Entertainment</strong>
-            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Streaming platforms, content delivery, and interactive media experiences.</p>
+            <p>Streaming platforms, content delivery, and interactive media experiences.</p>
           </div>
         </div>
         <div class="project">
           <div class="thumb">🛒</div>
-          <div style="padding:1.5rem">
+          <div class="project-body">
             <strong>E-Commerce Solutions</strong>
-            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">Complete marketplace platforms with payments, inventory, and user management.</p>
+            <p>Complete marketplace platforms with payments, inventory, and user management.</p>
           </div>
         </div>
         <div class="project">
           <div class="thumb">🏥</div>
-          <div style="padding:1.5rem">
+          <div class="project-body">
             <strong>Healthcare & Wellness</strong>
-            <p style="color:var(--muted);margin-top:0.5rem;font-size:0.95rem">HIPAA-compliant health apps with telemedicine, appointments, and patient data management.</p>
+            <p>HIPAA-compliant health apps with telemedicine, appointments, and patient data management.</p>
           </div>
         </div>
       </div>
@@ -1229,7 +1259,7 @@
 
     <section id="contact" class="section container">
       <h2>Start Your Project</h2>
-      <div class="contact-grid" style="margin-top:2rem">
+      <div class="contact-grid mt-lg">
         <div>
           <form class="form" onsubmit="submitForm(event)">
             <input id="name" placeholder="Your Full Name" required>
@@ -1246,7 +1276,7 @@
             </select>
             <textarea id="message" rows="5" placeholder="Describe your project idea, requirements, and timeline..." required></textarea>
             <button type="submit" class="btn-primary">Request Demo</button>
-            <div id="formNote" style="color:var(--muted);margin-top:0.8rem;font-weight:600"></div>
+            <div id="formNote" class="mt-sm"></div>
           </form>
         </div>
         <div class="contact-box">
