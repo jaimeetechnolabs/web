@@ -490,8 +490,9 @@
     }
     
     /* MOBILE */
+        /* MOBILE */
     @media (max-width: 768px) {
-      .container { padding: 0 15px; }
+      .container { padding: 0 20px; }
       
       header { padding: 12px 0; }
       
@@ -503,7 +504,7 @@
       nav ul {
         display: none;
         position: fixed;
-        top: 64px;
+        top: 65px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -516,7 +517,9 @@
         z-index: 999;
       }
       
-      nav ul.active { display: flex; }
+      nav ul.active { display: flex !important; }
+      
+      
       
       nav ul li {
         width: 100%;
